@@ -14,7 +14,7 @@ jobs:
       - save_cache:
           key: pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
           paths:
-            - ~/.cache
+            - ~/.cache/pre-commit
 
 workflows:
   version: 2
