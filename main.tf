@@ -29,7 +29,7 @@ resource "aws_iam_user" "main" {
   name          = "${lower(var.ci_name)}-${local.project}"
   force_destroy = true
 
-  tags {
+  tags = {
     Automation = "Terraform"
   }
 }
