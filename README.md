@@ -1,9 +1,14 @@
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Creates an IAM user/group for CI to use to push images to ECR.
 
 Creates the following resources:
 
 * IAM user, group, and policy.
+
+## Terraform Versions
+
+Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to master branch.
+
+Terraform 0.11. Pin module version to ~> 1.X. Submit pull-requests to terraform011 branch.
 
 ## Usage
 
@@ -16,6 +21,7 @@ module "ecr_ci_myapp" {
 }
 ```
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -25,3 +31,27 @@ module "ecr_ci_myapp" {
 | ecr\_repo | Name of the ECR repository. | string | n/a | yes |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Developer Setup
+
+Install dependencies (macOS)
+
+```shell
+brew install pre-commit go terraform terraform-docs
+```
+
+### Testing
+
+[Terratest](https://github.com/gruntwork-io/terratest) is being used for
+automated testing with this module. Tests in the `test` folder can be run
+locally by running the following command:
+
+```text
+make test
+```
+
+Or with aws-vault:
+
+```text
+AWS_VAULT_KEYCHAIN_NAME=<NAME> aws-vault exec <PROFILE> -- make test
+```
