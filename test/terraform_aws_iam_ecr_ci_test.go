@@ -13,12 +13,16 @@ func TestTerraformAwsIamEcrCi(t *testing.T) {
 	t.Parallel()
 
 	ecrRepo := fmt.Sprintf("ecr-repo-%s", strings.ToLower(random.UniqueId()))
+	awsRegion := aws.GetRandomStableRegion(t, nil, nil)
 
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../examples/simple/",
 		Vars: map[string]interface{}{
 			"ecr_repo": ecrRepo,
 			"ci_name":  "CircleCI",
+		},
+		EnvVars: map[string]string{
+			"AWS_DEFAULT_REGION": awsRegion,
 		},
 	}
 
