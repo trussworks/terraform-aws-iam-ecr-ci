@@ -24,7 +24,4 @@ func TestTerraformAwsIamEcrCi(t *testing.T) {
 
 	defer terraform.Destroy(t, terraformOptions)
 	terraform.InitAndApply(t, terraformOptions)
-
-	// Empty logs_bucket before terraform destroy
-	// aws.EmptyS3Bucket(t, awsRegion, bucket)
 }
