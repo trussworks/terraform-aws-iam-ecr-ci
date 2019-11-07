@@ -18,11 +18,11 @@
  */
 
 locals {
-  project = "${var.ci_project == "" ? var.ecr_repo : var.ci_project}"
+  project = var.ci_project == "" ? var.ecr_repo : var.ci_project
 }
 
 data "aws_ecr_repository" "main" {
-  name = "${var.ecr_repo}"
+  name = var.ecr_repo
 }
 
 resource "aws_iam_user" "main" {
@@ -41,7 +41,7 @@ resource "aws_iam_group" "main" {
 resource "aws_iam_group_membership" "main" {
   name  = "${lower(var.ci_name)}-${local.project}-group-membership"
   users = ["${lower(var.ci_name)}-${local.project}"]
-  group = "${aws_iam_group.main.name}"
+  group = aws_iam_group.main.name
 }
 
 data "aws_iam_policy_document" "main" {
@@ -69,7 +69,7 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      "${data.aws_ecr_repository.main.arn}",
+      data.aws_ecr_repository.main.arn,
     ]
   }
 }
@@ -78,10 +78,11 @@ resource "aws_iam_policy" "main" {
   name        = "${lower(var.ci_name)}-ecr-${var.ecr_repo}-policy"
   description = "Allow ${var.ci_name} to push new ${var.ecr_repo} ECR images"
   path        = "/"
-  policy      = "${data.aws_iam_policy_document.main.json}"
+  policy      = data.aws_iam_policy_document.main.json
 }
 
 resource "aws_iam_group_policy_attachment" "main" {
-  group      = "${aws_iam_group.main.name}"
-  policy_arn = "${aws_iam_policy.main.arn}"
+  group      = aws_iam_group.main.name
+  policy_arn = aws_iam_policy.main.arn
 }
+
