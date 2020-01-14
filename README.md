@@ -26,8 +26,8 @@ module "ecr_ci_myapp" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| ci\_name | Name of the CI system (e.g., CircleCI, Jenkins, …). | string | n/a | yes |
-| ci\_project | Name of the project being built. Uses ecr_repo name by default. | string | `""` | no |
+| ci\_name | Name of the CI system \(e.g., CircleCI, Jenkins, …\). | string | n/a | yes |
+| ci\_project | Name of the project being built. Uses ecr\_repo name by default. | string | `""` | no |
 | ecr\_repo | Name of the ECR repository. | string | n/a | yes |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
