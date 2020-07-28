@@ -22,14 +22,7 @@ module "ecr_ci_myapp" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| ci\_name | Name of the CI system \(e.g., CircleCI, Jenkins, …\). | string | n/a | yes |
-| ci\_project | Name of the project being built. Uses ecr\_repo name by default. | string | `""` | no |
-| ecr\_repo | Name of the ECR repository. | string | n/a | yes |
-
+Error: Failed to read module directory: Module directory /var/folders/dv/4lwc_5g10m7988rszs5thkk00000gn/T//terraform-docs-GI2oTUOeB4.tf does not exist or cannot be read.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Developer Setup
