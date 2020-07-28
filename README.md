@@ -12,12 +12,6 @@ Terraform 0.11. Pin module version to ~> 1.X. Submit pull-requests to terraform0
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-Creates an IAM user/group for CI to use to push images to ECR.
-
-Creates the following resources:
-
-- IAM user, group, and policy.
-
 ## Usage
 
 ```hcl
