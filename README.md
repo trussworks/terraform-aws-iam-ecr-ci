@@ -27,12 +27,13 @@ module "ecr_ci_myapp" {
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12 |
+| aws | ~> 2.70 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | ~> 2.70 |
 
 ## Inputs
 
