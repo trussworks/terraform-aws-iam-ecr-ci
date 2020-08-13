@@ -26,7 +26,7 @@ module "ecr_ci_myapp" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | ~> 0.12.0 |
 | aws | ~> 2.70 |
 
 ## Providers
