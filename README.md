@@ -4,8 +4,6 @@ Terraform 0.13. Pin module version to ~> 3.X. Submit pull-requests to master bra
 
 Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to terraform012 branch.
 
-Terraform 0.11. Pin module version to ~> 1.X. Submit pull-requests to terraform011 branch.
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Creates an IAM user/group for CI to use to push images to ECR.
 
@@ -28,14 +26,14 @@ module "ecr_ci_myapp" {
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.13 |
-| aws | ~> 3.0 |
+| terraform | >= 0.13 |
+| aws | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.0 |
+| aws | >= 3.0 |
 
 ## Inputs
 
