@@ -26,14 +26,14 @@ module "ecr_ci_myapp" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
+| terraform | >= 0.13 |
+| aws | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
+| aws | >= 3.0 |
 
 ## Modules
 
@@ -55,9 +55,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ci_name"></a> [ci\_name](#input\_ci\_name) | Name of the CI system (e.g., CircleCI, Jenkins, …). | `string` | n/a | yes |
-| <a name="input_ci_project"></a> [ci\_project](#input\_ci\_project) | Name of the project being built. Uses ecr\_repo name by default. | `string` | `""` | no |
-| <a name="input_ecr_repo"></a> [ecr\_repo](#input\_ecr\_repo) | Name of the ECR repository. | `string` | n/a | yes |
+| ci\_name | Name of the CI system (e.g., CircleCI, Jenkins, …). | `string` | n/a | yes |
+| ci\_project | Name of the project being built. Uses ecr\_repo name by default. | `string` | `""` | no |
+| ecr\_repo | Name of the ECR repository. | `string` | n/a | yes |
 
 ## Outputs
 

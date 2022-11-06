@@ -13,4 +13,3 @@ variable "ci_project" {
   description = "Name of the project being built. Uses ecr_repo name by default."
   default     = ""
 }
-
