@@ -85,4 +85,3 @@ resource "aws_iam_group_policy_attachment" "main" {
   group      = aws_iam_group.main.name
   policy_arn = aws_iam_policy.main.arn
 }
-
